@@ -1,0 +1,1 @@
+window.MOBEATS_CONFIG={supabaseUrl:"",supabasePublishableKey:""};
