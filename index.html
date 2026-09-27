@@ -20,7 +20,7 @@ footer{max-width:1280px;margin:auto;padding:35px 5vw;color:#666;border-top:1px s
 </head>
 <body>
 <nav class="nav"><a class="logo" href="#">mo<span>beats</span><small>.de</small></a><div class="navlinks"><a href="#music">Music</a><a href="#genres">Genres</a><a href="#artists">Artists</a></div><a class="pill" href="#music">Listen now</a></nav>
-<header class="hero"><div><div class="eyebrow">Soul · R&B · Hip-Hop</div><h1>Feel the <em>beat.</em><br>Own the night.</h1><p>mobeats.de ist dein neuer Musik-Spot für warme Soul-Vibes, smoothen R&B und energiegeladenen Hip-Hop.</p><div style="margin-top:28px"><a class="pill" style="background:var(--accent);color:#080808;border-color:var(--accent);font-weight:800" href="#music">▶ Start listening</a></div></div><div class="heroart" aria-label="Mobeats artwork"></div></header>
+<header class="hero"><div><div class="eyebrow">Soul · R&B · Hip-Hop</div><h1>Feel the <em>beat.</em><br>Own the night.</h1><p>mobeats.de ist dein neuer Musik-Spot für warme Soul-Vibes, smoothen R&B und energiegeladenen Hip-Hop.</p><div style="margin-top:28px"><a id="startButton" class="pill" style="background:var(--accent);color:#080808;border-color:var(--accent);font-weight:800;cursor:pointer" href="#music">▶ Start listening</a></div></div><div class="heroart" aria-label="Mobeats artwork"></div></header>
 <section class="section" id="genres"><div class="sectionhead"><div><div class="eyebrow">Explore</div><h2>Pick your mood.</h2></div></div><div class="tags"><button class="tag active" data-filter="all">All</button><button class="tag" data-filter="Soul">Soul</button><button class="tag" data-filter="R&B">R&B</button><button class="tag" data-filter="Hip-Hop">Hip-Hop</button></div></section>
 <section class="section" id="music"><div class="sectionhead"><div><div class="eyebrow">Featured</div><h2>New sounds.</h2></div><span class="muted" id="count">3 tracks</span></div><div class="grid" id="tracks">
 <article class="card" data-genre="Soul" data-title="Midnight Soul" data-artist="Mobeats" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"><div class="cover c1">MIDNIGHT<br>SOUL</div><div class="meta"><div><b>Midnight Soul</b><small>Mobeats · Soul</small></div><button class="play" aria-label="Play Midnight Soul">▶</button></div></article>
@@ -36,6 +36,7 @@ function load(i,play=true){if(i<0||i>=cards.length)return;current=i;const c=card
 function toggle(){if(current<0)return load(0);audio.paused?audio.play():audio.pause();}
 cards.forEach((c,i)=>c.querySelector('.play').onclick=()=>{if(current===i)toggle();else load(i)});
 document.querySelector('#mainPlay').onclick=toggle;
+document.querySelector('#startButton').onclick=e=>{e.preventDefault();document.querySelector('#music').scrollIntoView({behavior:'smooth'});load(0,true)};
 document.querySelector('#prev').onclick=()=>load((current-1+cards.length)%cards.length);
 document.querySelector('#next').onclick=()=>load((current+1)%cards.length);
 audio.addEventListener('play',()=>document.querySelector('#mainPlay').textContent='❚❚');
