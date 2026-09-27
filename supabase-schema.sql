@@ -3,7 +3,7 @@ create table if not exists public.artists(id uuid primary key default gen_random
 create table if not exists public.tracks(id uuid primary key default gen_random_uuid(),title text not null,slug text unique not null,artist_id uuid references public.artists(id) on delete set null,genre text default '',bpm integer default 0,audio_url text not null,cover_url text default '',duration_seconds integer default 0,is_published boolean default false,created_at timestamptz default now());
 create table if not exists public.playlists(id uuid primary key default gen_random_uuid(),name text not null,slug text unique not null,description text default '',cover_url text default '',is_published boolean default false,created_at timestamptz default now());
 create table if not exists public.playlist_tracks(playlist_id uuid references public.playlists(id) on delete cascade,track_id uuid references public.tracks(id) on delete cascade,position integer default 0,primary key(playlist_id,track_id));
-alter table public.artists enable row level security;
+create table if not exists public.admin_users(user_id uuid primary key references auth.users(id) on delete cascade,is_active boolean default true);\nalter table public.admin_users enable row level security;\ncreate policy if not exists "admins self" on public.admin_users for select to authenticated using (user_id=auth.uid());\n\nalter table public.artists enable row level security;
 alter table public.tracks enable row level security;
 alter table public.playlists enable row level security;
 alter table public.playlist_tracks enable row level security;
