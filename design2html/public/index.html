@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>design2html.de — KI Design → HTML/CSS</title>
+<style>
+:root{--bg:#070708;--panel:#101013;--text:#f7f7f5;--muted:#a4a4ab;--line:#26262c;--lime:#cfff45;--purple:#8d78ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}button{font:inherit}a{color:inherit;text-decoration:none}.wrap{max-width:1240px;margin:auto;padding:0 24px}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.logo{font-weight:900;font-size:21px;letter-spacing:-.06em}.logo i{color:var(--lime);font-style:normal}.badge{border:1px solid var(--line);padding:9px 14px;border-radius:99px;font-size:13px}
+.hero{text-align:center;padding:80px 0 48px}.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);padding:8px 13px;border-radius:99px;font-size:12px}.dot{width:7px;height:7px;background:var(--lime);border-radius:50%}
+h1{font-size:clamp(50px,8vw,100px);line-height:.9;letter-spacing:-.08em;margin:27px auto}.hero h1 span{color:var(--lime)}.lead{max-width:690px;margin:auto;color:var(--muted);font-size:18px;line-height:1.55}
+.app{display:grid;grid-template-columns:340px 1fr;gap:16px;padding:20px 0 90px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:22px}.panel h2{margin:0 0 7px;font-size:18px}.sub{color:var(--muted);font-size:13px;line-height:1.5}
+.drop{display:block;margin-top:20px;border:1px dashed #47474e;border-radius:18px;padding:35px 15px;text-align:center;cursor:pointer;background:#0c0c0f}.drop:hover{border-color:var(--lime)}.drop strong{display:block}.drop small{color:var(--muted)}input{display:none}.uploadicon{font-size:30px;margin-bottom:8px}
+.btn{border:0;border-radius:12px;padding:13px 16px;cursor:pointer;font-weight:800}.primary{background:var(--lime);color:#090a08;width:100%;margin-top:13px}.secondary{background:#18181d;color:white;border:1px solid var(--line)}.primary:disabled{opacity:.45;cursor:not-allowed}
+.status{display:flex;gap:8px;align-items:center;color:#bdbdc4;font-size:12px;margin-top:16px}.status .dot{box-shadow:0 0 12px var(--lime)}
+.workspace{padding:0;overflow:hidden}.toolbar{height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;border-bottom:1px solid var(--line)}.tabs{display:flex;gap:4px}.tab{border:0;background:transparent;color:#777982;padding:8px 11px;border-radius:8px;cursor:pointer}.tab.active{background:#202025;color:#fff}
+#preview{background:#fff;min-height:570px}.preview-frame{width:100%;height:570px;border:0;background:white}.code{margin:0;padding:22px;min-height:570px;max-height:570px;overflow:auto;background:#0b0b0e;color:#ddd;font:13px/1.65 ui-monospace,monospace;white-space:pre-wrap}
+.analysis{padding:16px 20px;border-top:1px solid var(--line);color:#aaa;font-size:13px;line-height:1.5}.analysis strong{color:white}
+.features{border-top:1px solid var(--line);padding:80px 0}.features h2{font-size:48px;letter-spacing:-.06em}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{border:1px solid var(--line);border-radius:20px;padding:23px;background:var(--panel)}.card b{color:var(--lime)}.card h3{margin:20px 0 8px}.card p{color:var(--muted);line-height:1.5;margin:0}footer{border-top:1px solid var(--line);padding:26px 0;color:#777;font-size:12px;display:flex;justify-content:space-between}
+@media(max-width:850px){.app,.grid{grid-template-columns:1fr}.badge{display:none}.hero{padding-top:60px}.preview-frame{height:460px}.code{min-height:460px;max-height:460px}}
+</style>
+</head>
+<body><div class="wrap">
+<nav><a class="logo" href="/">design<i>2</i>html.de</a><span class="badge">KI Design → HTML/CSS</span></nav>
+<header class="hero"><div class="eyebrow"><span class="dot"></span> Echte KI-Analyse</div><h1>Screenshot rein.<br><span>Website raus.</span></h1><p class="lead">Lade dein Design hoch. Die KI analysiert Layout, Farben, Typografie und Komponenten und erzeugt daraus direkt HTML und CSS.</p></header>
+<main class="app">
+<aside class="panel"><h2>1. Design hochladen</h2><p class="sub">PNG, JPG oder WebP · maximal 8 MB</p>
+<label class="drop" for="file"><div class="uploadicon">↑</div><strong id="fileName">Datei auswählen</strong><small id="fileHint">oder hier ablegen</small></label>
+<input id="file" type="file" accept="image/png,image/jpeg,image/webp">
+<button id="generate" class="btn primary" disabled>✨ Echte KI-Analyse starten</button>
+<div class="status"><span class="dot"></span><span id="status">Bereit</span></div>
+</aside>
+<section class="panel workspace"><div class="toolbar"><div class="tabs"><button class="tab active" id="previewTab">Live Preview</button><button class="tab" id="codeTab">HTML / CSS</button></div><button class="btn secondary" id="copy">Code kopieren</button></div>
+<div id="preview"><div style="display:grid;place-items:center;min-height:570px;color:#777">Deine generierte Website erscheint hier.</div></div>
+<pre class="code" id="code" hidden></pre><div class="analysis" id="analysis"><strong>KI-Analyse:</strong> Noch kein Design analysiert.</div></section>
+</main>
+<section class="features"><h2>Vom Bild zum Code.</h2><div class="grid"><div class="card"><b>01</b><h3>Vision</h3><p>Die KI sieht dein Design und erkennt Struktur, Typografie, Farben und UI-Komponenten.</p></div><div class="card"><b>02</b><h3>Code</h3><p>Sie erzeugt vollständiges HTML5 und CSS mit responsive Layout und sauberer Struktur.</p></div><div class="card"><b>03</b><h3>Preview</h3><p>Das Ergebnis wird direkt in einem sicheren Vorschau-Frame dargestellt.</p></div></div></section>
+<footer><span>© 2026 design2html.de</span><span>Design → KI → HTML/CSS</span></footer>
+</div>
+<script>
+const file=document.querySelector("#file"), nameEl=document.querySelector("#fileName"), hint=document.querySelector("#fileHint"), btn=document.querySelector("#generate"), status=document.querySelector("#status"), preview=document.querySelector("#preview"), code=document.querySelector("#code"), analysis=document.querySelector("#analysis");
+let result={html:"",css:""};
+file.addEventListener("change",()=>{const f=file.files[0];if(!f)return;if(f.size>8*1024*1024){status.textContent="Datei ist größer als 8 MB.";btn.disabled=true;return}nameEl.textContent=f.name;hint.textContent=(f.size/1024/1024).toFixed(2)+" MB";btn.disabled=false;status.textContent="Bereit für die KI-Analyse";});
+btn.addEventListener("click",async()=>{const f=file.files[0];if(!f)return;btn.disabled=true;status.textContent="KI analysiert dein Design …";analysis.innerHTML="<strong>KI-Analyse:</strong> Analyse läuft …";
+const fd=new FormData();fd.append("design",f);
+try{const r=await fetch("/api/generate",{method:"POST",body:fd});const data=await r.json();if(!r.ok)throw new Error(data.error||"Generierung fehlgeschlagen");
+result=data;render();status.textContent="Fertig ✓";}catch(e){status.textContent=e.message;analysis.innerHTML="<strong>Fehler:</strong> "+escapeHtml(e.message)}finally{btn.disabled=false;}});
+function render(){const doc=`<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>${result.css}</style></head><body>${result.html}</body></html>`;const iframe=document.createElement("iframe");iframe.className="preview-frame";iframe.setAttribute("sandbox","allow-scripts");preview.innerHTML="";preview.appendChild(iframe);iframe.srcdoc=doc;code.textContent="/* HTML */\\n"+result.html+"\\n\\n/* CSS */\\n"+result.css;analysis.innerHTML="<strong>KI-Analyse:</strong> "+escapeHtml(result.analysis)}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+document.querySelector("#previewTab").onclick=()=>{preview.hidden=false;code.hidden=true;document.querySelector("#previewTab").classList.add("active");document.querySelector("#codeTab").classList.remove("active")};
+document.querySelector("#codeTab").onclick=()=>{preview.hidden=true;code.hidden=false;document.querySelector("#codeTab").classList.add("active");document.querySelector("#previewTab").classList.remove("active")};
+document.querySelector("#copy").onclick=async()=>{if(!result.html)return;await navigator.clipboard.writeText("<!-- HTML -->\\n"+result.html+"\\n\\n/* CSS */\\n"+result.css);const b=document.querySelector("#copy");b.textContent="✓ Kopiert";setTimeout(()=>b.textContent="Code kopieren",1200)};
+</script></body></html>
