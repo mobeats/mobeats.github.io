@@ -1,4 +1,4 @@
-const tracks=[{title:"WATER BOY",artist:"Pi'erre Bourne",genre:"SoundCloud · Hip-Hop",type:"soundcloud",soundcloudUrl:"https://soundcloud.com/pierrebourne/water-boy"}];
+const tracks=[{title:"24/7 SOUNDCLOUD RADIO",artist:"24sevenradio",genre:"SoundCloud · 24/7 Radio",type:"soundcloud",soundcloudUrl:"https://soundcloud.com/24sevenradio/sets/24-7-soundcloud-radio"}];
 let playing=false,scWidget=null;
 const $=s=>document.querySelector(s);
 
@@ -18,7 +18,7 @@ function selectTrack(){
   const t=tracks[0];
   $("#playerTitle").textContent=t.title;
   $("#playerGenre").textContent=t.artist+" · "+t.genre;
-  $("#miniCover").innerHTML="SC";
+  $("#miniCover").innerHTML="24<br>7";
   $("#time").textContent="0:00"
 }
 
