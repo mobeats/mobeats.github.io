@@ -1,42 +1,49 @@
-<!DOCTYPE HTML>
-
-<html>
-	<head>
-		<title>Mobeats.de</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery.dropotron.min.js"></script>
-		<script src="js/jquery.scrollgress.min.js"></script>
-		<script src="js/jquery.scrolly.min.js"></script>
-		<script src="js/jquery.slidertron.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-xlarge.css" />
-		</noscript>
-		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-	</head>
-	<body class="landing" style="height: 100%;">
-		
-		<!-- Banner -->
-			<section id="banner" style="height: 100%;">
-				<div class="inner" style="height: 100%;">
-					<h2>MOBEATS.DE</h2>
-				</div>
-			</section>
-			
-		<!-- Footer -->
-			<footer id="footer">
-				<span class="copyright">
-					&copy; Copyright. All rights reserved by mobeats.de</a>
-				</span>
-			</footer>
-	</body>
-</html>
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<meta name="description" content="mobeats.de — Soul, R&B & Hip-Hop. Music, artists and sounds.">
+<title>mobeats.de — Soul · R&B · Hip-Hop</title>
+<style>
+:root{--bg:#070707;--panel:#111;--panel2:#171717;--text:#f7f4ef;--muted:#a6a19b;--line:#272727;--accent:#d8ff38;--accent2:#ff5c8a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0,#30200c 0,transparent 30%),var(--bg);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-bottom:100px}a{color:inherit;text-decoration:none}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(7,7,7,.82);backdrop-filter:blur(16px);z-index:20}.logo{font-size:25px;font-weight:900;letter-spacing:-1.5px}.logo span{color:var(--accent)}.navlinks{display:flex;gap:28px;color:#bbb}.navlinks a:hover{color:#fff}.pill{border:1px solid #444;border-radius:999px;padding:9px 15px}
+.hero{max-width:1280px;margin:auto;padding:85px 5vw 55px;display:grid;grid-template-columns:1.2fr .8fr;gap:45px;align-items:end}.eyebrow{color:var(--accent);font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:12px}.hero h1{font-size:clamp(58px,9vw,125px);line-height:.86;letter-spacing:-.075em;margin:16px 0 25px;max-width:900px}.hero h1 em{font-style:normal;color:#777}.hero p{color:var(--muted);max-width:580px;font-size:18px}.heroart{min-height:420px;border-radius:30px;background:linear-gradient(145deg,#ffbf35,#b84e3d 45%,#191919);position:relative;overflow:hidden;box-shadow:0 30px 80px #000}.heroart:before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:#070707;left:18%;top:15%;box-shadow:120px 110px 0 45px rgba(255,255,255,.08)}.heroart:after{content:"MOBEATS";position:absolute;bottom:25px;left:25px;font-size:42px;font-weight:900;letter-spacing:-2px}
+.section{max-width:1280px;margin:auto;padding:55px 5vw}.sectionhead{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px}.section h2{font-size:36px;letter-spacing:-1.5px;margin:0}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(145deg,var(--panel2),#0d0d0d);border:1px solid var(--line);border-radius:22px;padding:16px;transition:.25s}.card:hover{transform:translateY(-4px);border-color:#454545}.cover{aspect-ratio:1;border-radius:16px;margin-bottom:16px;display:flex;align-items:flex-end;padding:18px;font-size:25px;font-weight:900;letter-spacing:-1px}.c1{background:linear-gradient(135deg,#e5d4bc,#5c342a)}.c2{background:linear-gradient(135deg,#8e7cff,#13132d)}.c3{background:linear-gradient(135deg,#f35d91,#25101a)}.meta{display:flex;justify-content:space-between;gap:12px}.meta small{color:var(--muted);display:block}.play{width:42px;height:42px;border:0;border-radius:50%;background:var(--accent);color:#080808;font-size:17px;cursor:pointer;font-weight:900}.tags{display:flex;gap:10px;flex-wrap:wrap}.tag{padding:10px 16px;border:1px solid #333;border-radius:999px;color:#ccc;cursor:pointer}.tag.active,.tag:hover{background:var(--accent);color:#080808;border-color:var(--accent)}
+.player{position:fixed;left:0;right:0;bottom:0;height:82px;background:rgba(15,15,15,.95);border-top:1px solid #333;backdrop-filter:blur(18px);z-index:30;display:grid;grid-template-columns:1.2fr 2fr 1fr;align-items:center;padding:0 4vw;gap:25px}.now{display:flex;align-items:center;gap:12px}.mini{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#ffbf35,#ff5c8a)}.controls{display:flex;align-items:center;justify-content:center;gap:14px}.mainplay{width:45px;height:45px;border:0;border-radius:50%;background:#fff;cursor:pointer}.progress{height:4px;background:#333;border-radius:5px;overflow:hidden;margin-top:8px;cursor:pointer}.progress i{display:block;width:0;height:100%;background:var(--accent)}.time{font-size:11px;color:#777}.volume{text-align:right}.volume input{accent-color:var(--accent);max-width:130px}
+footer{max-width:1280px;margin:auto;padding:35px 5vw;color:#666;border-top:1px solid var(--line)}
+@media(max-width:800px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:55px}.heroart{min-height:280px}.grid{grid-template-columns:1fr 1fr}.player{grid-template-columns:1fr 1fr;height:74px}.volume{display:none}.now .detail{display:none}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.hero h1{font-size:60px}}
+</style>
+</head>
+<body>
+<nav class="nav"><a class="logo" href="#">mo<span>beats</span><small>.de</small></a><div class="navlinks"><a href="#music">Music</a><a href="#genres">Genres</a><a href="#artists">Artists</a></div><a class="pill" href="#music">Listen now</a></nav>
+<header class="hero"><div><div class="eyebrow">Soul · R&B · Hip-Hop</div><h1>Feel the <em>beat.</em><br>Own the night.</h1><p>mobeats.de ist dein neuer Musik-Spot für warme Soul-Vibes, smoothen R&B und energiegeladenen Hip-Hop.</p><div style="margin-top:28px"><a class="pill" style="background:var(--accent);color:#080808;border-color:var(--accent);font-weight:800" href="#music">▶ Start listening</a></div></div><div class="heroart" aria-label="Mobeats artwork"></div></header>
+<section class="section" id="genres"><div class="sectionhead"><div><div class="eyebrow">Explore</div><h2>Pick your mood.</h2></div></div><div class="tags"><button class="tag active" data-filter="all">All</button><button class="tag" data-filter="Soul">Soul</button><button class="tag" data-filter="R&B">R&B</button><button class="tag" data-filter="Hip-Hop">Hip-Hop</button></div></section>
+<section class="section" id="music"><div class="sectionhead"><div><div class="eyebrow">Featured</div><h2>New sounds.</h2></div><span class="muted" id="count">3 tracks</span></div><div class="grid" id="tracks">
+<article class="card" data-genre="Soul" data-title="Midnight Soul" data-artist="Mobeats" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"><div class="cover c1">MIDNIGHT<br>SOUL</div><div class="meta"><div><b>Midnight Soul</b><small>Mobeats · Soul</small></div><button class="play" aria-label="Play Midnight Soul">▶</button></div></article>
+<article class="card" data-genre="R&B" data-title="After Hours" data-artist="Mobeats" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"><div class="cover c2">AFTER<br>HOURS</div><div class="meta"><div><b>After Hours</b><small>Mobeats · R&B</small></div><button class="play" aria-label="Play After Hours">▶</button></div></article>
+<article class="card" data-genre="Hip-Hop" data-title="City Lights" data-artist="Mobeats" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"><div class="cover c3">CITY<br>LIGHTS</div><div class="meta"><div><b>City Lights</b><small>Mobeats · Hip-Hop</small></div><button class="play" aria-label="Play City Lights">▶</button></div></article>
+</div></section>
+<section class="section" id="artists"><div class="sectionhead"><div><div class="eyebrow">Coming next</div><h2>Artists & releases.</h2></div></div><p class="muted" style="max-width:650px">Die erste Version ist bewusst leichtgewichtig. Als Nächstes können echte Künstlerprofile, Uploads, Playlists, Cover-Management und ein persönlicher Account ergänzt werden.</p></section>
+<footer>© 2026 mobeats.de · Soul · R&B · Hip-Hop</footer>
+<div class="player"><div class="now"><div class="mini"></div><div class="detail"><b id="nowTitle">Nothing playing</b><small class="muted" id="nowArtist">Choose a track</small></div></div><div><div class="controls"><button id="prev">↶</button><button class="mainplay" id="mainPlay">▶</button><button id="next">↷</button></div><div class="progress" id="bar"><i id="fill"></i></div></div><div class="volume">🔊 <input id="volume" type="range" min="0" max="1" step=".01" value=".8"></div></div>
+<script>
+const cards=[...document.querySelectorAll('.card')], audio=new Audio(); let current=-1;
+function load(i,play=true){if(i<0||i>=cards.length)return;current=i;const c=cards[i];audio.src=c.dataset.src;audio.load();document.querySelector('#nowTitle').textContent=c.dataset.title;document.querySelector('#nowArtist').textContent=c.dataset.artist+' · '+c.dataset.genre;cards.forEach((x,j)=>x.querySelector('.play').textContent=j===i?'❚❚':'▶');if(play)audio.play().catch(()=>{});}
+function toggle(){if(current<0)return load(0);audio.paused?audio.play():audio.pause();}
+cards.forEach((c,i)=>c.querySelector('.play').onclick=()=>{if(current===i)toggle();else load(i)});
+document.querySelector('#mainPlay').onclick=toggle;
+document.querySelector('#prev').onclick=()=>load((current-1+cards.length)%cards.length);
+document.querySelector('#next').onclick=()=>load((current+1)%cards.length);
+audio.addEventListener('play',()=>document.querySelector('#mainPlay').textContent='❚❚');
+audio.addEventListener('pause',()=>{document.querySelector('#mainPlay').textContent='▶';cards.forEach(c=>c.querySelector('.play').textContent='▶');if(current>=0)cards[current].querySelector('.play').textContent='▶'});
+audio.addEventListener('timeupdate',()=>{document.querySelector('#fill').style.width=(audio.duration?audio.currentTime/audio.duration*100:0)+'%'});
+document.querySelector('#bar').onclick=e=>{if(audio.duration)audio.currentTime=(e.offsetX/e.currentTarget.clientWidth)*audio.duration};
+document.querySelector('#volume').oninput=e=>audio.volume=e.target.value; audio.volume=.8;
+audio.addEventListener('ended',()=>load((current+1)%cards.length));
+document.querySelectorAll('.tag').forEach(t=>t.onclick=()=>{document.querySelectorAll('.tag').forEach(x=>x.classList.remove('active'));t.classList.add('active');const f=t.dataset.filter;let n=0;cards.forEach(c=>{const show=f==='all'||c.dataset.genre===f;c.style.display=show?'block':'none';if(show)n++});document.querySelector('#count').textContent=n+' tracks'});
+</script>
+</body></html>
