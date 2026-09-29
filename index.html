@@ -35,6 +35,7 @@
 			background-image:url("background_image.png");
             background-size: cover;
             background-position: center;
+			background-repeat: no-repeat;
 			z-index:-2;
         }
 
@@ -47,7 +48,7 @@
             letter-spacing: 2px;
         }
 
-        .logo { font-weight: 900; font-size: 1.5rem; color: var(--primary); }
+        .logo h1 { font-weight: 900; font-size: 1.5rem; color: var(--primary); }
         .sub-header { font-size: 0.7rem; font-weight: 400; opacity: 0.8; letter-spacing: 3px; }
 		.logo span { color: white; }
 
@@ -105,6 +106,7 @@
         }
 
         @media (max-width: 768px) {
+			body {background-position: top -80px center;}
             header { padding: 20px; }
             .sub-header { display: none; }
 	       	.main-sub { font-size: 1.4rem;}
@@ -115,16 +117,16 @@
 
     <header>
         <div class="logo">
-			<span>MO</span>BEATS.DE
+			<h1><span>MO</span>BEATS.DE</h1>
 			<!--<p class="sub-header">Hip-Hop & R'n'B</p>-->
 		</div>
         <div class="sub-header">Est. 2013</div>
     </header>
 
     <main>
-        <h1 class="main-title">MO<span>BEATS</span></h1>
-		<p class="main-sub">Welcome to the Beats Factory!</p>
 		<!--
+		<div class="main-sub">Welcome to the MoBeats Factory!</div>
+		<h1 class="main-title">MO<span>BEATS</span></h1>
         <div class="play-btn">
             <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         </div>
