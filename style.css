@@ -13,6 +13,11 @@ body{
   color:var(--white);
   font-family:Arial,Helvetica,sans-serif;
   overflow-x:hidden;
+  
+  font-family: var(--font-main);
+  background-color: var(--black);
+  color: var(--white);
+  height: 100vh;
 }
 
 button{font:inherit}
@@ -29,12 +34,12 @@ button{font:inherit}
 .background{
   position:absolute;
   inset:0;
-  z-index:-3;
-  background-image:url("background_image.jpg");
+  z-index:-1;
+  background-image:url("background_image.png");
   background-position:center center;
   background-size:cover;
   background-repeat:no-repeat;
-  transform:scale(1.015);
+  /*transform:scale(1.015);*/
 }
 
 .overlay{
@@ -58,6 +63,15 @@ button{font:inherit}
   z-index:2;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
 .brand{
   display:inline-block;
   color:var(--white);
@@ -68,6 +82,9 @@ button{font:inherit}
   text-transform:uppercase;
   text-shadow:0 2px 18px rgba(0,0,0,.45);
 }
+
+.logo { font-weight: 900; font-size: 1.5rem; color: var(--primary); }
+.logo span { color: white; }
 
 .brand::first-letter{color:var(--white)}
 

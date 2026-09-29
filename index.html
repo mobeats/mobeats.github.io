@@ -1,42 +1,139 @@
-<!doctype html>
-<html lang="de">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#08090b">
-  <meta name="description" content="Mobeats – Hip-Hop, R&B und Soul.">
-  <title>Mobeats — Hip-Hop · R&B · Soul</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobeats.de</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FFB800;
+            --white: #FFFFFF;
+            --black: #000000;
+            --font-main: 'Montserrat', sans-serif;
+            --font-sub: 'Space Grotesk', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--black);
+            color: var(--white);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+			background-image:url("background_image.png");
+            background-size: cover;
+            background-position: center;
+			z-index:-2;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo { font-weight: 900; font-size: 1.5rem; color: var(--primary); }
+        .sub-header { font-size: 0.7rem; font-weight: 400; opacity: 0.8; letter-spacing: 3px; }
+		.logo span { color: white; }
+
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+			text-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        .main-title {
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 900;
+			margin: 0;
+        }
+
+       	.main-sub {
+			font-size: 2.2rem;
+			font-weight: bold;
+        }
+
+        .main-title span { color: var(--primary); }
+
+        .play-btn {
+            background: var(--primary);
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .play-btn:hover { transform: scale(1.1); }
+        .play-btn svg { fill: var(--black); width: 30px; }
+
+        .play-text { font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.7; }
+
+        .dots { display: flex; gap: 5px; margin-top: 20px; }
+        .dot { width: 6px; height: 6px; background: var(--primary); border-radius: 50%; }
+
+        footer {
+            padding-bottom: 30px;
+            text-align: center;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 20px; }
+            .sub-header { display: none; }
+	       	.main-sub { font-size: 1.4rem;}
+        }
+    </style>
 </head>
 <body>
-  <main class="hero">
-    <div class="background" aria-hidden="true"></div>
-    <div class="overlay" aria-hidden="true"></div>
 
-    <header class="topbar">
-      <a class="brand" href="/" aria-label="Mobeats Startseite">Mobeats</a>
-      <div class="year">EST. 2018</div>
+    <header>
+        <div class="logo">
+			<span>MO</span>BEATS.DE
+			<!--<p class="sub-header">Hip-Hop & R'n'B</p>-->
+		</div>
+        <div class="sub-header">Est. 2013</div>
     </header>
 
-    <div class="genre">HIP-HOP&nbsp; · &nbsp;R&amp;B&nbsp; · &nbsp;SOUL</div>
+    <main>
+        <h1 class="main-title">MO<span>BEATS</span></h1>
+		<p class="main-sub">Welcome to the Beats Factory!</p>
+		<!--
+        <div class="play-btn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+		-->
+    </main>
 
-    <section class="center">
-      <h1>Mobeats</h1>
+    <footer>
+		<div>© <script>document.write( new Date().getFullYear() );</script> MOBEATS.DE</div>
+    </footer>
 
-      <button class="pulse" type="button" aria-label="Pulse starten">
-        <span class="play-icon" aria-hidden="true"></span>
-      </button>
-
-      <div class="hint">PLAY PULSE DRÜCKEN</div>
-
-      <div class="dots" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-      </div>
-    </section>
-
-    <div class="scroll">SCROLL</div>
-  </main>
-
-  <script src="app.js"></script>
 </body>
 </html>
