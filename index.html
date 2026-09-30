@@ -1,116 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobeats.de</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #FFB800;
-            --white: #FFFFFF;
-            --black: #000000;
-            --font-main: 'Montserrat', sans-serif;
-            --font-sub: 'Space Grotesk', sans-serif;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: var(--font-main);
-            background-color: var(--black);
-            color: var(--white);
-            height: 100vh;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background-image: url("background_image.png");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: -2;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 30px 50px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .logo h1 { font-weight: 900; font-size: 1.5rem; color: var(--primary); }
-        .sub-header { font-size: 0.7rem; font-weight: 400; opacity: 0.8; letter-spacing: 3px; }
-        .logo span { color: white; }
-        .chatgpt-link {
-            color: inherit;
-            text-decoration: none;
-            transition: opacity 0.2s ease;
-        }
-        .chatgpt-link:hover { opacity: 1; text-decoration: underline; }
-        main {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            text-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
-        }
-        .main-title {
-            font-size: clamp(3rem, 10vw, 8rem);
-            font-weight: 900;
-            margin: 0;
-        }
-        .main-sub { font-size: 2.2rem; font-weight: bold; }
-        .main-title span { color: var(--primary); }
-        .play-btn {
-            background: var(--primary);
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            margin-bottom: 15px;
-        }
-        .play-btn:hover { transform: scale(1.1); }
-        .play-btn svg { fill: var(--black); width: 30px; }
-        .play-text { font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.7; }
-        .dots { display: flex; gap: 5px; margin-top: 20px; }
-        .dot { width: 6px; height: 6px; background: var(--primary); border-radius: 50%; }
-        footer {
-            padding-bottom: 30px;
-            text-align: center;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            opacity: 0.5;
-        }
-        @media (max-width: 768px) {
-            body { background-position: top -80px center; }
-            header { padding: 20px; }
-            .sub-header { display: none; }
-            .main-sub { font-size: 1.4rem; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mobeats.de – individueller KI-Assistent.">
+  <title>Mobeats.de</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--yellow:#FFB800;--white:#fff;--black:#050505}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{width:100%;height:100%}
+    body{
+      font-family:Montserrat,sans-serif;color:var(--white);background:#000 url("background_image.jpg") center/cover no-repeat;
+      min-height:100vh;overflow:hidden;position:relative
+    }
+    body:before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.38);z-index:0}
+    header,main,footer{position:relative;z-index:1}
+    header{display:flex;justify-content:space-between;align-items:flex-start;padding:30px 50px;text-transform:uppercase;letter-spacing:2px}
+    .logo{font-size:1.5rem;font-weight:900}.logo .mo{color:#fff}.logo .beats{color:var(--yellow)}
+    .tagline{font-family:"Space Grotesk",sans-serif;font-size:.68rem;letter-spacing:3px;opacity:.82;margin-top:7px}
+    .chatgpt-link{color:#fff;text-decoration:none;font-size:.72rem;letter-spacing:3px;opacity:.85;transition:.2s}
+    .chatgpt-link:hover{color:var(--yellow);opacity:1}
+    main{height:calc(100vh - 160px);display:flex;align-items:center;justify-content:center;text-align:center}
+    .hero{transform:translateY(-2vh)}
+    .hero-title{font-size:clamp(3.4rem,10vw,8.5rem);font-weight:900;line-height:.9;text-shadow:0 6px 20px rgba(0,0,0,.55)}
+    .hero-title .mo{color:#fff}.hero-title .beats{color:var(--yellow)}
+    .play-btn{margin:38px auto 14px;width:76px;height:76px;border:0;border-radius:50%;background:var(--yellow);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,.35);transition:transform .2s}
+    .play-btn:hover{transform:scale(1.08)}
+    .play-btn:after{content:"";margin-left:5px;border-left:18px solid #000;border-top:11px solid transparent;border-bottom:11px solid transparent}
+    .play-text{font-size:.58rem;letter-spacing:2.5px;opacity:.78}
+    .dots{display:flex;justify-content:center;gap:6px;margin-top:20px}.dot{width:6px;height:6px;border-radius:50%;background:var(--yellow)}
+    footer{position:absolute;bottom:28px;left:0;right:0;text-align:center;font-size:.62rem;letter-spacing:4px;opacity:.55}
+    
+    .chat-fab{position:fixed;right:28px;bottom:28px;z-index:20;border:1px solid rgba(255,184,0,.7);background:rgba(5,5,5,.9);color:#fff;border-radius:999px;padding:12px 18px;font:700 .68rem Montserrat,sans-serif;letter-spacing:2px;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,.45);transition:.2s}
+    .chat-fab:hover{background:var(--yellow);color:#000}
+    .chat-panel{position:fixed;right:28px;bottom:82px;width:min(390px,calc(100vw - 32px));height:min(600px,calc(100vh - 120px));z-index:30;display:none;flex-direction:column;background:rgba(9,9,9,.97);border:1px solid rgba(255,184,0,.45);border-radius:18px;overflow:hidden;box-shadow:0 25px 80px rgba(0,0,0,.65);backdrop-filter:blur(14px)}
+    .chat-panel.open{display:flex}
+    .chat-head{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.09)}
+    .chat-brand{font-weight:900;letter-spacing:1px}.chat-brand span{color:var(--yellow)}
+    .chat-status{font:500 .58rem "Space Grotesk",sans-serif;letter-spacing:1.5px;opacity:.55;margin-top:4px}
+    .chat-close{border:0;background:transparent;color:#fff;font-size:20px;cursor:pointer;opacity:.7}.chat-close:hover{color:var(--yellow)}
+    .chat-messages{flex:1;overflow:auto;padding:18px;display:flex;flex-direction:column;gap:12px}
+    .msg{max-width:86%;padding:11px 13px;border-radius:13px;font:400 .86rem/1.45 "Space Grotesk",sans-serif;white-space:pre-wrap}
+    .msg.ai{align-self:flex-start;background:#171717;border:1px solid rgba(255,255,255,.06)}
+    .msg.user{align-self:flex-end;background:var(--yellow);color:#000}
+    .chat-form{display:flex;gap:8px;padding:12px;border-top:1px solid rgba(255,255,255,.09)}
+    .chat-input{flex:1;min-width:0;border:1px solid rgba(255,255,255,.13);background:#111;color:#fff;border-radius:11px;padding:12px;font:400 .86rem "Space Grotesk",sans-serif;outline:none}
+    .chat-input:focus{border-color:var(--yellow)}
+    .chat-send{width:44px;border:0;border-radius:11px;background:var(--yellow);color:#000;font-weight:900;cursor:pointer}
+    .chat-send:disabled{opacity:.45;cursor:wait}
+    @media(max-width:768px){
+      header{padding:20px}.tagline{display:none}.chatgpt-link{font-size:.62rem}
+      main{height:calc(100vh - 120px)}.hero-title{font-size:clamp(3rem,16vw,5.5rem)}
+      footer{bottom:18px}.chat-fab{right:16px;bottom:16px}.chat-panel{right:16px;bottom:70px}
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1><span>MO</span>BEATS.DE</h1>
-        </div>
-        <div class="sub-header">
-            <a class="chatgpt-link" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a>
-        </div>
-    </header>
+  <header>
+    <div>
+      <div class="logo"><span class="mo">MO</span><span class="beats">BEATS</span><span style="color:#fff">.DE</span></div>
+      <div class="tagline">INDIVIDUAL</div>
+    </div>
+    <a class="chatgpt-link" href="#mobeats-ai" id="openTopChat">ChatGPT</a>
+  </header>
 
-    <main></main>
+  <main>
+    <section class="hero">
+      <h1 class="hero-title"><span class="mo">MO</span><span class="beats">BEATS</span></h1>
+      <button class="play-btn" id="openHeroChat" aria-label="Mobeats AI öffnen"></button>
+      <div class="play-text">MOBEATS AI ÖFFNEN</div>
+      <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    </section>
+  </main>
 
-    <footer>
-        <div>© <script>document.write(new Date().getFullYear());</script> MOBEATS.DE</div>
-    </footer>
+  <footer>© <span id="year"></span> MOBEATS.DE</footer>
+
+  <button class="chat-fab" id="chatFab" aria-label="Mobeats AI öffnen">CHATGPT</button>
+
+  <section class="chat-panel" id="mobeats-ai" aria-label="Mobeats AI Chat">
+    <div class="chat-head">
+      <div><div class="chat-brand">MOBEATS <span>AI</span></div><div class="chat-status">INDIVIDUELLER KI-ASSISTENT</div></div>
+      <button class="chat-close" id="chatClose" aria-label="Chat schließen">×</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg ai">Hallo 👋<br>Ich bin der individuelle KI-Assistent von Mobeats. Wie kann ich dir helfen?</div>
+    </div>
+    <form class="chat-form" id="chatForm">
+      <input class="chat-input" id="chatInput" maxlength="6000" autocomplete="off" placeholder="Nachricht schreiben …">
+      <button class="chat-send" id="chatSend" type="submit">➤</button>
+    </form>
+  </section>
+
+  <script>
+    const $=id=>document.getElementById(id);
+    $("year").textContent=new Date().getFullYear();
+    const panel=$("mobeats-ai"),messages=$("chatMessages"),input=$("chatInput"),send=$("chatSend");
+    const history=[];
+    function openChat(){panel.classList.add("open");input.focus()}
+    function closeChat(){panel.classList.remove("open")}
+    $("chatFab").onclick=openChat;$("openHeroChat").onclick=openChat;$("chatClose").onclick=closeChat;
+    $("openTopChat").onclick=e=>{e.preventDefault();openChat()}
+    function addMsg(text,role){const el=document.createElement("div");el.className="msg "+role;el.textContent=text;messages.appendChild(el);messages.scrollTop=messages.scrollHeight}
+    $("chatForm").addEventListener("submit",async e=>{
+      e.preventDefault();const text=input.value.trim();if(!text||send.disabled)return;
+      addMsg(text,"user");history.push({role:"user",content:text});input.value="";send.disabled=true;input.disabled=true;
+      const loading=document.createElement("div");loading.className="msg ai";loading.textContent="Einen Moment …";messages.appendChild(loading);messages.scrollTop=messages.scrollHeight;
+      try{
+        const res=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:history})});
+        const data=await res.json();loading.remove();
+        if(!res.ok)throw new Error(data.error||"Fehler");
+        addMsg(data.reply,"ai");history.push({role:"assistant",content:data.reply});
+      }catch(err){loading.textContent="Der KI-Chat ist noch nicht verbunden. Bitte später erneut versuchen."}
+      finally{send.disabled=false;input.disabled=false;input.focus()}
+    });
+  </script>
 </body>
 </html>
