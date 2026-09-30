@@ -15,13 +15,7 @@
             --font-main: 'Montserrat', sans-serif;
             --font-sub: 'Space Grotesk', sans-serif;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: var(--font-main);
             background-color: var(--black);
@@ -31,14 +25,12 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
-			background-image:url("background_image.png");
+            background-image: url("background_image.png");
             background-size: cover;
             background-position: center;
-			background-repeat: no-repeat;
-			z-index:-2;
+            background-repeat: no-repeat;
+            z-index: -2;
         }
-
         header {
             display: flex;
             justify-content: space-between;
@@ -47,11 +39,15 @@
             text-transform: uppercase;
             letter-spacing: 2px;
         }
-
         .logo h1 { font-weight: 900; font-size: 1.5rem; color: var(--primary); }
         .sub-header { font-size: 0.7rem; font-weight: 400; opacity: 0.8; letter-spacing: 3px; }
-		.logo span { color: white; }
-
+        .logo span { color: white; }
+        .chatgpt-link {
+            color: inherit;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+        .chatgpt-link:hover { opacity: 1; text-decoration: underline; }
         main {
             flex-grow: 1;
             display: flex;
@@ -59,22 +55,15 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-			text-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
+            text-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
         }
-
         .main-title {
             font-size: clamp(3rem, 10vw, 8rem);
             font-weight: 900;
-			margin: 0;
+            margin: 0;
         }
-
-       	.main-sub {
-			font-size: 2.2rem;
-			font-weight: bold;
-        }
-
+        .main-sub { font-size: 2.2rem; font-weight: bold; }
         .main-title span { color: var(--primary); }
-
         .play-btn {
             background: var(--primary);
             border-radius: 50%;
@@ -87,15 +76,11 @@
             transition: transform 0.3s ease;
             margin-bottom: 15px;
         }
-
         .play-btn:hover { transform: scale(1.1); }
         .play-btn svg { fill: var(--black); width: 30px; }
-
         .play-text { font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.7; }
-
         .dots { display: flex; gap: 5px; margin-top: 20px; }
         .dot { width: 6px; height: 6px; background: var(--primary); border-radius: 50%; }
-
         footer {
             padding-bottom: 30px;
             text-align: center;
@@ -104,38 +89,28 @@
             letter-spacing: 4px;
             opacity: 0.5;
         }
-
         @media (max-width: 768px) {
-			body {background-position: top -80px center;}
+            body { background-position: top -80px center; }
             header { padding: 20px; }
             .sub-header { display: none; }
-	       	.main-sub { font-size: 1.4rem;}
+            .main-sub { font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
-
     <header>
         <div class="logo">
-			<h1><span>MO</span>BEATS.DE</h1>
-			<!--<p class="sub-header">Hip-Hop & R'n'B</p>-->
-		</div>
-        <div class="sub-header">Est. 2013</div>
+            <h1><span>MO</span>BEATS.DE</h1>
+        </div>
+        <div class="sub-header">
+            <a class="chatgpt-link" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a>
+        </div>
     </header>
 
-    <main>
-		<!--
-		<div class="main-sub">Welcome to the MoBeats Factory!</div>
-		<h1 class="main-title">MO<span>BEATS</span></h1>
-        <div class="play-btn">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-		-->
-    </main>
+    <main></main>
 
     <footer>
-		<div>© <script>document.write( new Date().getFullYear() );</script> MOBEATS.DE</div>
+        <div>© <script>document.write(new Date().getFullYear());</script> MOBEATS.DE</div>
     </footer>
-
 </body>
 </html>
